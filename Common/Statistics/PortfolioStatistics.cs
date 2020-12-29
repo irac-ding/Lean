@@ -282,7 +282,7 @@ namespace QuantConnect.Statistics
         /// <returns>Double annual performance percentage</returns>
         private static decimal GetAnnualPerformance(List<double> performance, int tradingDaysPerYear = 252)
         {
-            return (decimal)Statistics.AnnualPerformance(performance, (double)tradingDaysPerYear);
+            return Statistics.AnnualPerformance(performance, (double)tradingDaysPerYear).SafeDecimalCast();
         }
 
         /// <summary>
